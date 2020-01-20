@@ -1,0 +1,144 @@
+/* Css total */
+body{
+    padding: 0;
+    margin: 0;
+    background: url("img/dayz.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+/* Ajustando os links */
+a {
+    text-decoration: none;
+    color: brown;
+}
+a:hover {
+	bottom: 0;
+	left: 0;
+    opacity: 0;
+    transform: scale(0.1, 1);
+    transition: 1s ease;
+    width: ;
+}
+/* retirando as bullets da lista */
+ul{
+    list-style-type: none;
+}
+/* definindo o grid */
+#main{
+    display: grid;
+    grid-template-rows: 15vh 70vh 15vh;
+    grid-template-areas: "header header" "nav nav" "footer footer";
+    color: white;
+    text-shadow: black 1px 2px 2px
+}
+/* menu */
+.header{
+    grid-area: header;
+}
+header ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 40px;
+}
+header a {
+    margin: 0 .5rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+  }
+/* textos */
+.nav{
+    grid-area: nav;
+    text-align: center;
+    font-size: 35PX;
+
+}
+.nav ul{
+    text-align: start;
+    margin-left: 15px;
+}
+/* Animação */
+h1 {
+    animation-duration: 2s;
+    animation-name: slidein;
+    /* Gradiente */
+    background: -webkit-linear-gradient(left, black 0%, brown 50%, red 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+/* footer */
+.footer{
+    grid-area: footer;
+    background: black;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    
+}
+/* responsividade */
+@media (min-width: 100px){
+    #main{
+    grid-template-areas: "header" "nav" "footer";
+    width: auto;
+    }
+    header ul{
+        font-size: 20px;
+        justify-content: center;
+    }
+    h1{
+        margin-left: 20px;
+    }
+    .nav{
+        font-size: 1.5rem;
+    }
+    .footer{
+        font-size: 20px;
+    }
+
+}
+@media (min-width: 750px){
+    #main{
+    grid-template-areas: "header" "nav" "footer";
+    width: auto;
+    }
+    header ul{
+        font-size: 30px;
+        justify-content: center;
+        
+    }
+    .nav{
+        font-size: 2rem;
+    }
+    .footer{
+        font-size: 30px;
+    }
+
+}
+@media (min-width: 800px){
+    .header ul{
+        justify-content: flex-end;
+        height: 800px;
+    }
+}
+@media (min-width:980px){
+    #main{
+        height: 980px;
+    }
+    .header ul{
+        float: right;
+        justify-content: space-around;
+    }
+}
